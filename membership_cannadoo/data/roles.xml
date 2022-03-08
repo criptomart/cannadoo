@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo noupdate="1">
+    <!--Roles-->
+    <record id="role_dispensario" model="res.users.role">
+        <field name="name">Dispensario</field>
+        <field name="implied_ids" eval="[
+                (6, 0, [ref('base.group_partner_manager'),
+                        ref('pos_debt_notebook.group_pos_credit_update_manager'),
+                        ref('base.group_multi_company'),
+                        ref('account.group_account_invoice'),
+                        ref('membership_extension.group_membership_manager'),
+                        ref('account.group_show_line_subtotals_tax_excluded'),
+                        ref('pos_access_right.group_negative_qty'),
+                        ref('pos_access_right.group_delete_order'),
+                        ref('pos_access_right.group_multi_order'),
+                        ref('pos_access_right.group_payment'),
+                        ref('pos_access_right.group_discount'),
+                        ref('pos_access_right.group_change_unit_price'),
+                        ref('point_of_sale.group_pos_user'),
+                        ref('base.group_user')])
+            ]"/>
+    </record>
+    <record id="role_almacen" model="res.users.role">
+        <field name="name">Almacén</field>
+        <field name="implied_ids" eval="[
+                (6, 0, [ref('base.group_partner_manager'),
+                        ref('pos_debt_notebook.group_pos_credit_update_manager'),
+                        ref('base.group_multi_company'),
+                        ref('account.group_account_invoice'),
+                        ref('membership_extension.group_membership_manager'),
+                        ref('account.group_show_line_subtotals_tax_excluded'),
+                        ref('pos_access_right.group_negative_qty'),
+                        ref('pos_access_right.group_delete_order'),
+                        ref('pos_access_right.group_multi_order'),
+                        ref('pos_access_right.group_payment'),
+                        ref('pos_access_right.group_discount'),
+                        ref('pos_access_right.group_change_unit_price'),
+                        ref('point_of_sale.group_pos_user'),
+                        ref('stock.group_stock_multi_locations'),
+                        ref('uom.group_uom'),
+                        ref('stock.group_stock_manager'),
+                        ref('base.group_user')])
+            ]"/>
+    </record>
+    <record id="role_erp_manager" model="res.users.role">
+        <field name="name">Manager</field>
+        <field name="implied_ids" eval="[
+                (6, 0, [ref('base.group_partner_manager'),
+                        ref('pos_debt_notebook.group_pos_credit_update_manager'),
+                        ref('base.group_multi_company'),
+                        ref('account.group_account_invoice'),
+                        ref('membership_extension.group_membership_manager'),
+                        ref('account.group_show_line_subtotals_tax_excluded'),
+                        ref('pos_access_right.group_negative_qty'),
+                        ref('pos_access_right.group_delete_order'),
+                        ref('pos_access_right.group_multi_order'),
+                        ref('pos_access_right.group_payment'),
+                        ref('pos_access_right.group_discount'),
+                        ref('pos_access_right.group_change_unit_price'),
+                        ref('point_of_sale.group_pos_user'),
+                        ref('stock.group_stock_multi_locations'),
+                        ref('uom.group_uom'),
+                        ref('stock.group_stock_manager'),
+                        ref('base.group_user'),
+                        ref('account.group_account_manager'),
+                        ref('base.group_no_one'),
+                        ref('base.group_partner_manager'),
+                        ref('base.group_erp_manager'),
+                        ref('point_of_sale.group_pos_manager')])
+            ]"/>
+    </record>
+    
+    <record id="role_consultas" model="res.users.role">
+        <field name="name">Consultas</field>
+        <field name="implied_ids" eval="[
+                (6, 0, [ref('base.group_portal')])
+            ]"/>
+    </record>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="WebcamPopupWidget">
+        <div class="modal-dialog">
+          <div class="popup-webcam">
+                <div class="live_webcam_div">
+                    <div id="live_webcam_canna"/>
+                </div>
+                <div class="mt64 direction_icon fa fa-angle-right fa-8x"/>
+                <div class="webcam_result_div">
+                    <div id="webcam_result_canna"/>
+                </div>
+            <div class="row">
+                <button class='btn-primary take_snap_btn'>Tomar foto</button>
+                <button class='btn-primary save_btn'>Guardar y cerrar</button>
+                <button class='btn-primary close_btn'>Cerrar</button>                                                    
+            </div>
+          </div>
+        </div>
+    </t>
+</templates>

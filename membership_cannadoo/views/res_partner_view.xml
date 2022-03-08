@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record model="ir.ui.view" id="view_partner_form">
+    <field name="name">Membership extension</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="membership.view_partner_form" />
+    <field name="priority" eval="999" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='image']" position="replace">
+            <field name="image" widget="image" class="member_image" options="{}"/>
+        </xpath>
+        <xpath expr="//field[@name='vat']" position="replace">
+            <field name="vat" placeholder="e.g. ESA00000000" attrs="{'readonly': [('parent_id','!=',False)]}" required="True" />
+            <field name="birthdate_date" required="True"/>
+            <field name="membership_category_id"/>
+            <field name="property_product_pricelist" readonly="True"/>
+        </xpath>
+        <xpath expr="//field[@name='phone']" position="before">
+            <field name="last_order_date" />
+            <field name="barcode" string="Keyring Code" />
+            <field name="free_member" />
+        </xpath>
+        <xpath expr="//field[@name='function']" position="replace">
+            <field name="function" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='mobile']" position="replace">
+            <field name="mobile" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='website']" position="replace">
+            <field name="website" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='title']" position="replace">
+            <field name="title" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='street2']" position="replace">
+            <field name="street2" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='lang']" position="replace">
+            <field name="lang" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='category_id']" position="replace">
+            <field name="category_id" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='message_bounce']" position="replace">
+            <field name="category_id" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='property_payment_term_id']" position="replace">
+            <field name="category_id" attrs="{'invisible': 1}"/>
+        </xpath> 
+        <xpath expr="//field[@name='user_id']" position="replace">
+            <field name="user_id" attrs="{'invisible': 1}"/>
+        </xpath>
+        <xpath expr="//field[@name='membership_category_ids']" position="attributes">
+            <attribute name="invisible">1</attribute>  
+        </xpath>        
+        <xpath expr="//group[@name='purchase']" position="attributes">
+            <attribute name="invisible">1</attribute>  
+        </xpath>
+        <xpath expr="//group[@name='fiscal_information']" position="attributes">
+            <attribute name="invisible">1</attribute>  
+        </xpath>
+        <xpath expr="//group[@name='container_row_stock']" position="attributes">
+            <attribute name="invisible">1</attribute>  
+        </xpath>        
+        <xpath expr="//page[@name='accounting']" position="attributes">
+            <attribute name="invisible">1</attribute>  
+        </xpath>
+        <xpath expr="//field[@name='child_ids']" position="attributes">
+            <attribute name="invisible">1</attribute>
+        </xpath>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="membership_members_tree">
+    <field name="name">Members</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="membership.membership_members_tree" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after" >
+            <field name="ref" string="Code"/>
+        </xpath>
+        <xpath expr="//field[@name='associate_member']" position="replace" >
+            <field name="guarantor_member" string="Guarantor"/>
+            <field name="last_order_date" />
+        </xpath>        
+    </field>
+</record>
+
+<record model="ir.ui.view" id="view_res_partner_member_filter">
+    <field name="name">Membership extension filters</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="membership.view_res_partner_member_filter" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="replace">
+            <field name="name" filter_domain="['|','|',('name','ilike',self),('parent_id','ilike',self),('ref','=ilike',self)]"/>
+        </xpath>
+        <xpath expr="//filter[@name='all_members']" position="after">
+            <filter 
+                string="Last dispense before 3 months"
+                name="last_order_3months" 
+                domain="[('last_order_date', '&lt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=90), datetime.time(0,0,0)))]"
+            />
+            <filter 
+                string="Last dispense before 6 months"
+                name="last_order_3months" 
+                domain="[('last_order_date', '&lt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=180), datetime.time(0,0,0)))]"
+            />
+            <filter 
+                string="Last dispense before 1 year"
+                name="last_order_3months" 
+                domain="[('last_order_date', '&lt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=365), datetime.time(0,0,0)))]"
+            />                        
+        </xpath>        
+    </field>
+</record>
+</odoo>

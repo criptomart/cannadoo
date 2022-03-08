@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.net>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+    <template id="tmp_customer_form" name="Partner Form">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <div class="col-md-12">
+                        <t t-if="partner">
+                          <div class="alert alert-success">
+                              Miembro encontrado
+                          </div>
+                          <div class="col-md-4">
+                              <img t-if="partner.image" t-attf-src="data:image/*;base64,{{partner.image}}"/>
+                          </div>
+                          <div class="col-md-4">
+                              <h3>Nombre: <span t-esc="partner.name"/></h3>
+                              <h3>Código: <span t-esc="partner.ref"/></h3>
+                              <h3>NIF: <span t-esc="partner.vat"/></h3>
+                              <h4>Aval: <span t-esc="partner.guarantor_member.name"/></h4>
+                              <h4 t-if="partner.street">Dirección: <span t-esc="partner.street"/> - <span t-esc="partner.city"/></h4>
+                          </div>
+                        </t>
+                        <t t-if="not_found">
+                          <div class="alert alert-danger">
+                              Miembro no encontrado.
+                          </div>
+                        </t>
+                        <form action="/member/form/submit">
+                            <div class="form-group">
+                                <label for="name">Nombre: </label>
+                                <input type="text" class="form-control" name="name" id="name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="id">NIF: </label>
+                                <input type="text" class="form-control" name="id" id="idNumber" />
+                            </div>
+                            <div class="form-group">
+                                <label for="code">Código: </label>
+                                <input type="text" class="form-control" name="ref" id="ref" />
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+                </div>
+              </div>
+          </t>
+    </template>
+</odoo>
+
+

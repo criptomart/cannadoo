@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_analysis_pivot_search" model="ir.ui.view">
+        <field name="name">stock.analysis.search</field>
+        <field name="inherit_id" ref="stock_analysis.stock_analysis_pivot_search" />        
+        <field name="model">stock.analysis</field>
+        <field name="arch" type="xml">
+            <xpath expr="/search/group/filter[@name='Category']" position="after" > 
+                <filter string="Precio" name="product_list_price" context="{'group_by':'product_list_price'}"/>
+            </xpath>  
+        </field>      
+    </record>    
+
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets_backend" name="membership_cannadoo" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+            <script type="text/javascript" src="/membership_cannadoo/static/src/js/models.js"></script>
+            </xpath>
+    </template>
+</odoo>

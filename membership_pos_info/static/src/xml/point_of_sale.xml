@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ClientDetails">
+        <t t-jquery='.client-picture' t-operation='replace'>
+            <div class='client-picture-cannadoo'>
+                <img t-att-src="widget.partner_image_url(partner.id,'image')" alt="Partner logo"/>
+            </div>
+        </t>
+        <t t-jquery='.client-name' t-operation='append'>
+             - <t t-esc='partner.ref' />
+            <br/><span class='label'>Estado: </span>
+            <t t-if="partner.membership_state == 'none'"><span style="color: red;">No miembro</span></t>
+            <t t-if="partner.membership_state == 'canceled'"><span style="color: red;">Cancelado</span></t>
+            <t t-if="partner.membership_state == 'old'"><span style="color: red;">Cuota caducada</span></t>
+            <t t-if="partner.membership_state == 'waiting'"><span style="color: orange;">Esperando</span></t>
+            <t t-if="partner.membership_state == 'invoiced'"><span style="color: green;">Miembro facturado</span></t>
+            <t t-if="partner.membership_state == 'free'"><span style="color: green;">Exento</span></t>
+            <t t-if="partner.membership_state == 'paid'"><span style="color: green;">Al día</span></t>
+        </t>
+        <t t-jquery='.client-detail:has(.client-id)' t-operation='after'>
+            <t t-if="partner.membership_stop">
+              <div class='client-detail'>
+                  <span class='label'>Fin cuota</span>
+                  <span class='detail'>
+                      <t t-esc='partner.membership_stop' />
+                  </span>
+              </div>
+            </t>
+            <t t-if="partner.comment">
+              <div class='client-detail'>
+                  <span class='label'>Comment</span>
+                  <span class='detail'>
+                      <t t-esc='partner.comment' />
+                  </span>
+              </div>
+            </t>
+        </t>
+    </t>
+
+    <t t-extend="ClientLine">
+        <t t-jquery="tr.client-line" t-operation="replace">
+        <tr class='client-line' t-att-data-id='partner.id'>
+            <td><t t-esc='partner.ref' /></td>
+            <td><t t-esc='partner.name' /></td>
+            <td>
+              <t t-if="partner.membership_state == 'none'"><span style="color: red;">No miembro</span></t>
+              <t t-if="partner.membership_state == 'canceled'"><span style="color: red;">Cancelado</span></t>
+              <t t-if="partner.membership_state == 'old'"><span style="color: red;">Cuota caducada</span></t>
+              <t t-if="partner.membership_state == 'waiting'"><span style="color: orange;">Esperando</span></t>
+              <t t-if="partner.membership_state == 'invoiced'"><span style="color: green;">Miembro facturado</span></t>
+              <t t-if="partner.membership_state == 'free'"><span style="color: green;">Exento</span></t>
+              <t t-if="partner.membership_state == 'paid'"><span style="color: green;">Al día</span></t>
+            </td>
+        </tr> 
+        </t>
+    </t>
+
+    <t t-extend="ClientListScreenWidget">
+       <t t-jquery="th:contains('Name')" t-operation="replace">
+            <th id="partner_code">Código</th>
+       </t>
+       <t t-jquery="th:contains('Address')" t-operation="replace">
+            <th id="partner_name">Nombre</th>
+       </t>
+       <t t-jquery="th:contains('Phone')" t-operation="replace">
+            <th id="partner_state">Estado</th>
+       </t>
+    </t>
+    
+    <t t-extend="ClientDetailsEdit">
+        <t t-jquery='.client-picture' t-operation='replace'>    
+            <div id="image" class='client-picture-cannadoo o_form_binary_file_web_cam'>
+                <t t-if="!partner.id or !widget.partner_image_url(partner.id,'image')">
+                    <i class='fa fa-camera' role="img" aria-label="Picture" title="Picture"></i><br/>
+                    <label class="picUpload">Lanzar Webcam</label>
+                </t>
+                <t t-else="">
+                    <img id="member-picture" class="client-image" t-att-src="widget.partner_image_url(partner.id,'image')" />
+                </t>
+            </div>
+        </t>
+        <t t-jquery='.client-name' t-operation='replace'>    
+            <input class='detail client-name' name='name' t-att-value='partner.name' placeholder='Nombre y Apellidos (*)' style="background-color: #7ed8ff;"></input>
+            <t t-if="partner.ref">
+                <span class="client-name"><t t-esc='partner.ref' /></span>
+            </t>
+            <br/>
+            <label for="picUpload" class="picUpload">
+                <input type='file' id="picUpload" ></input>               
+                <i class="fa fa-cloud-upload"></i> Subir foto
+            </label>
+        </t>
+        <t t-jquery='.edit-buttons' t-operation='after'>            
+             <div class='clearfix'></div>
+             <br/><br/><br/>
+        </t>
+        
+        <t t-jquery='.vat' t-operation='replace'>            
+              <input class='detail vat' name='vat' t-att-value='partner.vat || ""' style="background-color: #7ed8ff;"></input>
+        </t>
+        <t t-jquery='.client-details-right div:last-child' t-operation='replace'>
+            <div t-attf-class='client-detail oe_hidden'>
+                <span class='label'>Pricelist</span>
+                <select class='detail needsclick' name='property_product_pricelist'>
+                    <t t-foreach='widget.pos.pricelists' t-as='pricelist'>
+                        <option t-att-value='pricelist.id'
+                                t-att-selected="partner.property_product_pricelist ? (pricelist.id === partner.property_product_pricelist[0] ? true : undefined) : undefined">
+                            <t t-esc='pricelist.display_name'/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </t>        
+        <t t-jquery='.client-details-left' t-operation='append'>
+            <div class='client-detail'>
+                <span class='label'>Fecha nacimiento</span>
+                <input type="date" class='detail client-birthdate' name='birthdate_date'
+                    t-att-value='partner.birthdate_date || ""' style="background-color: #7ed8ff;">
+                </input>
+            </div>        
+            <div class='client-detail'>
+                <span class='label'>Aval</span>
+                <select class='detail client-guarantor needsclick' name='guarantor_member' style="background-color: #7ed8ff;">
+                    <option value=''>None</option>
+                    <t t-foreach='widget.pos.partners' t-as='client'>
+                        <option t-att-value='client.id' 
+                            t-att-selected="'partner_guarantor_member' ? ((partner.guarantor_member and client.id === partner.guarantor_member[0]) ? true : undefined) : undefined">
+                            <t t-esc='client.name'/>
+                        </option>
+                    </t>
+                </select>
+                <span class='label'>Filtrar Aval</span>                
+                <input id="filter_guarantor"></input>
+            </div>
+            <br />
+            <div class='client-detail' style="display: inline-block;" >
+                <span class='label'>DNI Frontal</span>
+                <div id="image_id" class='client-picture-cannadoo-id o_form_binary_file_web_cam'>
+                    <t t-if="!partner.id or !widget.partner_image_url(partner.id,'image_id')">
+                        <label class="picUpload">                    
+                            <i class='fa fa-camera' role="img" aria-label="Picture"></i> Lanzar Webcam
+                        </label>
+                    </t>
+                    <t t-else=''>
+                        <img t-att-src="widget.partner_image_url(partner.id,'image_id')" height="250px" />
+                    </t>
+                </div>
+                <label for="picUploadId" class="picUpload">
+                    <input type='file' id="picUploadId"></input>               
+                    <i class="fa fa-cloud-upload"></i> Subir foto
+                </label>                
+            </div>
+        </t>
+        <t t-jquery='.client-details-right' t-operation='append'>            
+            <div class='client-detail'>
+                <span class='label'>Exento</span>
+                <input id="free_member" type="checkbox" class='detail client-free-member' name='free_member' 
+                    t-att-checked="partner.free_member || False" style="margin-left: -150px;" />
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Consumo mensual</span>
+                <input class='detail client-monthly-consumption-limit' name='monthly_consumption_limit'
+                    t-att-value='partner.monthly_consumption_limit || "90"'>
+                </input>
+            </div>            
+            <div class='client-detail'>
+                <span class='label'>Categoría</span>
+<!--                <select class='detail client-membership-category needsclick' name='membership_category_id'>-->
+<!--                    <option value=''>None</option>-->
+<!--                    <t t-foreach='widget.pos.member_categories' t-as='category'>-->
+<!--                        <option t-att-value='category.id'-->
+<!--                            t-att-selected="'member_category' ? ((partner.membership_category_id and category.id === partner.membership_category_id[0]) ? true : undefined) : undefined">-->
+<!--                            <t t-esc='category.name'/>-->
+<!--                        </option>-->
+<!--                    </t>-->
+<!--                </select>-->
+            </div>
+            <br />
+            <div class='client-detail'>
+                <span class='label'>DNI Revés</span>
+                <div id="image_id_back" class='client-picture-cannadoo-id-back o_form_binary_file_web_cam'>
+                    <t t-if="!partner.id or !widget.partner_image_url(partner.id,'image_id_back')">
+                        <label class="picUpload">                    
+                            <i class='fa fa-camera' role="img" aria-label="Picture" ></i> Lanzar Webcam
+                        </label>
+                    </t>
+                    <t t-else=''>
+                        <img t-att-src="widget.partner_image_url(partner.id,'image_id_back')" height="250px" />
+                    </t>
+                </div>
+                <label for="picUploadIdBack" class="picUpload">
+                    <input type='file' id="picUploadIdBack" ></input>               
+                    <i class="fa fa-cloud-upload"></i> Subir foto
+                </label>                
+            </div>
+        </t>    
+    </t>    
+</templates>

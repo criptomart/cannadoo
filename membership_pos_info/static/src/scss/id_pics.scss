@@ -1,0 +1,36 @@
+.id_image {
+      max-height: 225px;
+      max-width: 225px;
+      margin-bottom: 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      border: none;  
+}
+
+.oe_align_left {
+//      float: left;
+      color: yellow;
+      background-color: red;
+      margin-left: 0;
+}
+
+.state_color_warning{
+      color: red;
+}
+
+.state_color_success{
+      color: green;
+}
+
+
+input[type="file"] {
+    display: none;
+}
+
+.picUpload {
+    font-size: large;
+    border: 1px solid;
+    display: inline-block;
+    padding: 6px 6px;
+    margin-top: 6px;
+    cursor: pointer;
+}

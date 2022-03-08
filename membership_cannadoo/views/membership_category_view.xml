@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record id="membership_category_tree_view_cannadoo" model="ir.ui.view">
+    <field name="name">Membership Categories Pricelists</field>
+    <field name="model">membership.membership_category</field>
+    <field name="inherit_id" ref="membership_extension.membership_category_tree_view" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="after">
+            <field name="pricelist"/>
+        </xpath>
+    </field>
+</record>
+
+</odoo>

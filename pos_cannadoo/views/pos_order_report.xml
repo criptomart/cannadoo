@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+
+        <record id="view_report_pos_order_search_cannadoo" model="ir.ui.view">
+            <field name="name">report.pos.order.search</field>
+            <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search" />
+            <field name="model">report.pos.order</field>
+            <field name="arch" type="xml">
+                <xpath expr="/search/group/filter[@name='product_category']" position="after" > 
+                    <filter string="Precio sin descuento" name="product_list_price" context="{'group_by':'product_list_price'}"/>
+                    <filter string="Precio con descuento" name="price_unit" context="{'group_by':'price_unit'}"/>
+                </xpath>
+            </field>
+        </record>
+
+  </data>
+</odoo>

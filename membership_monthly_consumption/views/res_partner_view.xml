@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record model="ir.ui.view" id="view_partner_form">
+    <field name="name">Membership extension</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="membership.view_partner_form" />
+    <field name="priority" eval="999" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='member_lines']" position="before">
+            <group>
+              <field name="monthly_consumption_limit" />
+              <field name="monthly_consumption_current" />
+            </group>
+        </xpath>
+        <xpath expr="//field[@name='phone']" position="before">
+            <field name="monthly_consumption_limit" required="True"/>
+            <field name="monthly_consumption_current" />
+        </xpath>
+    </field>
+</record>
+</odoo>

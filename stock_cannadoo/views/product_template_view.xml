@@ -1,0 +1,18 @@
+<odoo>
+  <data>
+    <record id="view_product_template_search_cannadoo" model="ir.ui.view">
+        <field name="name">product.template.search.cannadoo</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <xpath expr="/search/filter[@name='inactive']" position="after" > 
+                <filter
+                    string="All"
+                    name="all_with_archived"
+                    domain="['|',('active','=',False),('active','=',True)]"
+                />
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

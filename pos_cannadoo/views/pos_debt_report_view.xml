@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+   
+    <record id="view_report_pos_debt_cannadoo_tree" model="ir.ui.view">
+        <field name="name">report.pos.debt.tree</field>
+        <field name="inherit_id" ref="pos_debt_notebook.view_report_pos_debt_tree" />
+        <field name="model">report.pos.debt</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                    <attribute name="default_order">date desc,balance desc</attribute>
+                    <attribute name="decoration-success">balance &gt;0</attribute>
+                    <attribute name="decoration-danger">balance &lt;0</attribute>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="pos_debt_notebook.action_report_pos_debt_all" model="ir.actions.act_window">
+        <field name="name">Debts / Credits</field>
+        <field name="res_model">report.pos.debt</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,pivot,graph,form</field>
+        <field name="search_view_id" ref="pos_debt_notebook.view_report_pos_debt_search" />
+        <field name="context">{"search_default_today":1, "search_default_customer":1}</field>
+    </record>
+    
+    <record id="view_report_pos_debt_search_cannadoo" model="ir.ui.view">
+        <field name="name">report.pos.debt.search</field>
+        <field name="inherit_id" ref="pos_debt_notebook.view_report_pos_debt_search" />
+        <field name="model">report.pos.debt</field>
+        <field name="arch" type="xml">
+            <xpath expr="/search/filter[@name='today']" position="after" > 
+                <filter
+                    string="Yesterday"
+                    name="yesterday"
+                    domain="[('date', '&gt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=1), datetime.time(0,0,0))), ('date', '&lt;=', datetime.datetime.combine(context_today() - datetime.timedelta(days=1), datetime.time(23,59,59)))]"
+                />
+                <filter
+                    string="2 Days Ago"
+                    name="two_days_ago"
+                    domain="[('date', '&gt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=2), datetime.time(0,0,0))), ('date', '&lt;=', datetime.datetime.combine(context_today() - datetime.timedelta(days=2), datetime.time(23,59,59)))]"
+                />
+                <filter
+                    string="3 Days Ago"
+                    name="three_days_ago"
+                    domain="[('date', '&gt;=',  datetime.datetime.combine(context_today() - datetime.timedelta(days=3), datetime.time(0,0,0))), ('date', '&lt;=', datetime.datetime.combine(context_today() - datetime.timedelta(days=3), datetime.time(23,59,59)))]"
+                />
+                <filter
+                    string="This Month"
+                    name="month"
+                    domain="[('date','&lt;=', time.strftime('%%Y-%%m-31')),('date','&gt;=',time.strftime('%%Y-%%m-01'))]"
+                    help="POS ordered created during current year"
+                />                
+            </xpath>
+        </field>
+    </record>
+    
+    
+  </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo noupdate="1">
+    <record model="ir.cron" id="cron_compute_code_number">
+        <field name="name">Update members code numbers</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">months</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="code">model.cron_compute_code_number()</field>
+        <field name="nextcall">2022-02-01 02:00:00</field>
+        <field name="active" eval="False"/>
+    </record>
+</odoo>

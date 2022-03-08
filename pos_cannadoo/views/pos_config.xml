@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_config_main_form_view_cannadoo" model="ir.ui.view">
+            <field name="name">pos.config.form.view.cannadoo</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='iface_big_scrollbars']/../.." position="after">
+                <div class="col-xs-12 col-md-6 o_setting_box" id="cannadoo_conf_discount">
+                    <div class="o_setting_left_pane">
+                        <field name="discount_mode" />
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="discount_mode" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box" id="cannadoo_conf_default_price">
+                    <div class="o_setting_right_pane">
+                        <label for="default_pos_price" />
+                        <field name="default_pos_price" />
+                    </div>
+                </div>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

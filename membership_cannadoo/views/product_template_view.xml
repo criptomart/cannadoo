@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record model="ir.ui.view" id="membership_products_pos_categ_form">
+            <field name="name">Add membership POS category field</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="membership.membership_products_form" />
+            <field name="arch" type="xml">
+                <field name="categ_id" position="after">
+                    <field name="pos_categ_id" required="True" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="membership.action_membership_products">
+            <field name="name">Membership Products</field>
+            <field name="res_model">product.template</field>
+            <field name="domain">[('membership','=',True), ('type', '=', 'service')]</field>
+            <field name="context" eval="{'membership':True, 'type':'service', 'default_membership_type': 'variable', 'default_membership': True, 'default_type': 'service', 'default_uom_id': ref('uom.product_uom_unit'), 'default_uom_po_id': ref('uom.product_uom_unit'), 'default_taxes_id': False}" />
+            <field name="search_view_id" ref="membership.membership_product_search_form_view"/>
+        </record>
+</odoo>

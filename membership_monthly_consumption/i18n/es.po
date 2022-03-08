@@ -1,0 +1,79 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* membership_monthly_consumption
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-29 19:36+0000\n"
+"PO-Revision-Date: 2021-03-29 19:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: membership_monthly_consumption
+#: model:ir.model.fields,help:membership_monthly_consumption.field_res_partner__monthly_consumption_limit
+#: model:ir.model.fields,help:membership_monthly_consumption.field_res_users__monthly_consumption_limit
+msgid "Configure the limit for the monthly consumption of this member."
+msgstr "Configura el límite de consumo mensual permitido a un socio"
+
+#. module: membership_monthly_consumption
+#. openerp-web
+#: code:addons/membership_monthly_consumption/static/src/js/membership_pos.js:48
+#, python-format
+msgid "Consumo mensual excedido"
+msgstr ""
+
+#. module: membership_monthly_consumption
+#: model:ir.model,name:membership_monthly_consumption.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: membership_monthly_consumption
+#: model:ir.model.fields,field_description:membership_monthly_consumption.field_res_partner__monthly_consumption_current
+#: model:ir.model.fields,field_description:membership_monthly_consumption.field_res_users__monthly_consumption_current
+msgid "Current Month"
+msgstr "Mes en curso"
+
+#. module: membership_monthly_consumption
+#. openerp-web
+#: code:addons/membership_monthly_consumption/static/src/js/membership_pos.js:49
+#, python-format
+msgid "Este socio excede su consumo máximo mensual con esta dispensa. ¿Quieres continuar?"
+msgstr ""
+
+#. module: membership_monthly_consumption
+#. openerp-web
+#: code:addons/membership_monthly_consumption/static/src/xml/point_of_sale.xml:7
+#, python-format
+msgid "Month consumption"
+msgstr "Consumo mensual"
+
+#. module: membership_monthly_consumption
+#: model:ir.model.fields,field_description:membership_monthly_consumption.field_res_partner__monthly_consumption_limit
+#: model:ir.model.fields,field_description:membership_monthly_consumption.field_res_users__monthly_consumption_limit
+msgid "Monthly Consumption"
+msgstr "Consumo mensual"
+
+#. module: membership_monthly_consumption
+#: model:ir.model,name:membership_monthly_consumption.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Órdenes del Punto de Dispensa"
+
+#. module: membership_monthly_consumption
+#: model:ir.actions.server,name:membership_monthly_consumption.cron_reset_month_comsumption_ir_actions_server
+#: model:ir.cron,cron_name:membership_monthly_consumption.cron_reset_month_comsumption
+#: model:ir.cron,name:membership_monthly_consumption.cron_reset_month_comsumption
+msgid "Reset Members Month Consumption"
+msgstr "Restablece Consumo Mensual"
+
+#. module: membership_monthly_consumption
+#: model:ir.model.fields,help:membership_monthly_consumption.field_res_partner__monthly_consumption_current
+#: model:ir.model.fields,help:membership_monthly_consumption.field_res_users__monthly_consumption_current
+msgid "This field shows the consumption of the member in the current month."
+msgstr "Este campo muestra el consumo actual del socio en el mes en curso."
+

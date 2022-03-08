@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_partner_form" model="website.menu">
+            <field name="name">Buscar Socio</field>
+            <field name="url">/member/form</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">22</field>
+        </record>
+    </data>
+</odoo>

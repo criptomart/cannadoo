@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Criptomart <tech@criptomart.com>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record model="ir.ui.view" id="view_pos_session_form">
+    <field name="name">Pos Session Gastos Desglosados</field>
+    <field name="model">pos.session</field>
+    <field name="inherit_id" ref="point_of_sale.view_pos_session_form" />
+    <field name="priority" eval="999" />
+    <field name="arch" type="xml">
+        <label for="cash_register_total_entry_encoding" position="replace">
+        </label>
+        <xpath expr="//field[@name='cash_register_total_entry_encoding']" position="replace">
+          <label for="pos_transaction_sum" attrs="{'invisible' : [('state', '=', 'opening_control')]}" string="+ Aportaciones" class="oe_force_bold oe_opening_total"/>
+          <field name="pos_transaction_sum" nolabel="1" attrs="{'invisible' : [('state', '=', 'opening_control')]}" class="oe_bold oe_pos_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+          <label for="put_take_money_sum" attrs="{'invisible' : [('state', '=', 'opening_control')]}" string="- Gastos" class="oe_force_bold oe_opening_total"/>
+          <field name="put_take_money_sum" nolabel="1" attrs="{'invisible' : [('state', '=', 'opening_control')]}" class="oe_bold oe_pos_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+        </xpath>
+    </field>
+</record>
+</odoo>

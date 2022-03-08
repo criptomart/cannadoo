@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets_backend" name="pos_empty_clientlist" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+            <script type="text/javascript" src="/pos_empty_clientlist/static/src/js/screens.js"></script>
+            </xpath>
+    </template>
+</odoo>

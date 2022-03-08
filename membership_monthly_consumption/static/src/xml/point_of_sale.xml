@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ClientDetails">
+        <t t-jquery='.client-detail:has(.client-id)' t-operation='after'>
+            <t t-if="partner.monthly_consumption_current">
+              <div class='client-detail'>
+                  <span class='label'>Month consumption</span>
+                  <span class='detail'>
+                      <t t-esc='partner.month_consumption_current' />
+                      /
+                      <t t-esc='partner.month_consumption_limit' />
+                  </span>
+              </div>
+            </t>
+        </t>
+    </t>
+</templates>

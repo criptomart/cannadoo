@@ -1,0 +1,283 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_cannadoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-25 07:52+0000\n"
+"PO-Revision-Date: 2021-10-25 07:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_pos_session_form
+msgid "+ Aportaciones"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_pos_session_form
+msgid "- Gastos"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_debt_search_cannadoo
+msgid "2 Days Ago"
+msgstr "Anteayer"
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_debt_search_cannadoo
+msgid "3 Days Ago"
+msgstr "Hace 3 días"
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:119
+#, python-format
+msgid "A Customer Name Is Required"
+msgstr "Se requiere un nombre de socio"
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_product_product__available_in_pos
+#: model:ir.model.fields,field_description:pos_cannadoo.field_product_template__available_in_pos
+msgid "Available in POS"
+msgstr "Disponible en Dispensario"
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_pos_session__put_take_money_sum
+msgid "Campo computado que almacena la suma de los movimientos de caja que se realizan con las opciones de poner y sacar dinero."
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_pos_session__pos_transaction_sum
+msgid "Campo computado que almacena la suma de movimientos de efectivo en dispensario."
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_product_product__pos_categ_id
+#: model:ir.model.fields,help:pos_cannadoo.field_product_template__pos_categ_id
+msgid "Category used in the Point of Sale."
+msgstr "Categoría utilizada en el Dispensario."
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.stock_cannadoo_product_form
+msgid "Categoría de dispensario"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/xml/templates.xml:16
+#, python-format
+msgid "Cerrar"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_pos_config__discount_mode
+msgid "Change the regular Odoo discount mode, set up the quantity and recalculate product price."
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_product_product__available_in_pos
+#: model:ir.model.fields,help:pos_cannadoo.field_product_template__available_in_pos
+msgid "Check if you want this product to appear in the Point of Sale."
+msgstr "Marque si quiere que este producto aparezca en el Dispensario"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_config__default_pos_price
+msgid "Default order line price"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,help:pos_cannadoo.field_pos_config__default_pos_price
+msgid "Default order line price when adding products in grams in PoS."
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:142
+#, python-format
+msgid "El campo Aval es requerido"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:124
+#, python-format
+msgid "El campo NIF es requerido"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:130
+#, python-format
+msgid "El campo NIF no es válido en España. Para saltar la validación en NIF extranjeros añade \"EU\" delante del número"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:137
+#, python-format
+msgid "El campo fecha de nacimiento es requerido"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:193
+#, python-format
+msgid "Error: Could not Save Changes"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/xml/templates.xml:15
+#, python-format
+msgid "Guardar y cerrar"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_credit_update__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_pos_credit_update
+msgid "Manual Credit Updates"
+msgstr "Actualización Manual Créditos"
+
+#. module: pos_cannadoo
+#: code:addons/pos_cannadoo/models/pos_session.py:66
+#, python-format
+msgid "No payment method configured! \n"
+"Either no Chart of Account is installed or no payment method is configured for this POS."
+msgstr ""
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_debt_search_cannadoo
+msgid "POS ordered created during current year"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_product_product__pos_categ_id
+#: model:ir.model.fields,field_description:pos_cannadoo.field_product_template__pos_categ_id
+msgid "Point of Sale Category"
+msgstr "Categoría del Dispensario"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Configuración del punto de dispensa"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Líneas de Orden de Dispensario"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_report_pos_order
+msgid "Point of Sale Orders Report"
+msgstr "Reporte de Órdenes del Dispensario"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Sesión del Punto de Dispensa"
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_order_search_cannadoo
+msgid "Precio con descuento"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_order_line__product_list_price
+#: model:ir.model.fields,field_description:pos_cannadoo.field_report_pos_order__product_list_price
+msgid "Precio de dispensa"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_order_search_cannadoo
+msgid "Precio sin descuento"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_report_pos_order__product_qty
+msgid "Product Quantity"
+msgstr "Cantidad producto"
+
+#. module: pos_cannadoo
+#: model:ir.model,name:pos_cannadoo.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de Producto"
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_config__discount_mode
+msgid "Quantity discount enabled"
+msgstr "Descuento en cantidad activado"
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_session__put_take_money_sum
+msgid "Suma de movimientos de caja"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_pos_session__pos_transaction_sum
+msgid "Suma de transacciones de dispensario"
+msgstr ""
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_debt_search_cannadoo
+msgid "This Month"
+msgstr "Este mes"
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:64
+#, python-format
+msgid "Toma de fotos"
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/xml/templates.xml:14
+#, python-format
+msgid "Tomar foto"
+msgstr ""
+
+#. module: pos_cannadoo
+#: code:addons/pos_cannadoo/models/pos_session.py:53
+#, python-format
+msgid "Unable to open the session. You have to assign a sales journal to your point of sale."
+msgstr ""
+
+#. module: pos_cannadoo
+#: model:ir.model.fields,field_description:pos_cannadoo.field_report_pos_order__price_unit
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: pos_cannadoo
+#: model_terms:ir.ui.view,arch_db:pos_cannadoo.view_report_pos_debt_search_cannadoo
+msgid "Yesterday"
+msgstr "Ayer"
+
+#. module: pos_cannadoo
+#: code:addons/pos_cannadoo/models/pos_session.py:41
+#, python-format
+msgid "You should assign a Point of Sale to your session."
+msgstr ""
+
+#. module: pos_cannadoo
+#. openerp-web
+#: code:addons/pos_cannadoo/static/src/js/screens.js:187
+#, python-format
+msgid "Your Internet connection is probably down."
+msgstr ""
+

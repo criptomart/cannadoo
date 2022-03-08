@@ -1,0 +1,115 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* membership_cannadoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 12:31+0000\n"
+"PO-Revision-Date: 2021-11-05 12:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: membership_cannadoo
+#: model:res.groups,name:membership_cannadoo.role_almacen_res_groups
+#: model:res.users.role,name:membership_cannadoo.role_almacen
+msgid "Almacén"
+msgstr ""
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.membership_members_tree
+msgid "Code"
+msgstr "Código"
+
+#. module: membership_cannadoo
+#: model:res.groups,name:membership_cannadoo.role_consultas_res_groups
+#: model:res.users.role,name:membership_cannadoo.role_consultas
+msgid "Consultas"
+msgstr ""
+
+#. module: membership_cannadoo
+#: model:ir.model,name:membership_cannadoo.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: membership_cannadoo
+#: model:res.groups,name:membership_cannadoo.role_dispensario_res_groups
+#: model:res.users.role,name:membership_cannadoo.role_dispensario
+msgid "Dispensario"
+msgstr ""
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.membership_members_tree
+msgid "Guarantor"
+msgstr "Aval"
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.view_partner_form
+msgid "Keyring Code"
+msgstr "Código llavero"
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.view_res_partner_member_filter
+msgid "Last dispense before 1 year"
+msgstr "Última dispensa (1 año)"
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.view_res_partner_member_filter
+msgid "Last dispense before 3 months"
+msgstr "Última dispensa (3 meses)"
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.view_res_partner_member_filter
+msgid "Last dispense before 6 months"
+msgstr "Última dispensa (6 meses)"
+
+#. module: membership_cannadoo
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_partner__last_order_date
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_users__last_order_date
+msgid "Last order date"
+msgstr "Fecha última dispensa"
+
+#. module: membership_cannadoo
+#: model:res.groups,name:membership_cannadoo.role_erp_manager_res_groups
+#: model:res.users.role,name:membership_cannadoo.role_erp_manager
+msgid "Manager"
+msgstr ""
+
+#. module: membership_cannadoo
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_partner__membership_category_id
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_users__membership_category_id
+msgid "Membership Category"
+msgstr "Categoría de socio"
+
+#. module: membership_cannadoo
+#: model:ir.model,name:membership_cannadoo.model_membership_membership_category
+msgid "Membership category"
+msgstr "Categoría de asociación"
+
+#. module: membership_cannadoo
+#: model:ir.model.fields,field_description:membership_cannadoo.field_membership_membership_category__pricelist
+msgid "Pricelist for category"
+msgstr "Tarifa de la categoría"
+
+#. module: membership_cannadoo
+#: model:ir.model.fields,help:membership_cannadoo.field_res_partner__property_product_pricelist
+#: model:ir.model.fields,help:membership_cannadoo.field_res_users__property_product_pricelist
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "Esta tarifa se utilizará, en lugar de la por defecto, para las dispensas de la empresa actual."
+
+#. module: membership_cannadoo
+#: model_terms:ir.ui.view,arch_db:membership_cannadoo.view_partner_form
+msgid "e.g. ESA00000000"
+msgstr ""
+
+#. module: membership_cannadoo
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_partner__property_product_pricelist
+#: model:ir.model.fields,field_description:membership_cannadoo.field_res_users__property_product_pricelist
+msgid "Membership pricelist"
+msgstr "Tarifa de socio"
+

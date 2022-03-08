@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+
+<record model="ir.ui.view" id="view_partner_form">
+    <field name="name">Membership ID Picks</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="membership.view_partner_form" />
+    <field name="priority" eval="999" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='vat']" position="after">
+            <field name="image_id" widget='image' class="id_image" />
+        </xpath>
+        <xpath expr="//field[@name='category_id']" position="after">
+            <field name="image_id_back" widget='image' class="id_image" />
+        </xpath>
+    </field>
+</record>
+
+<template id="assets_backend" name="Id Pics css assets" inherit_id="web.assets_backend">
+    <xpath expr="." position="inside">
+        <link rel="stylesheet" href="/membership_id_pics/static/src/scss/id_pics.scss"/>
+    </xpath>
+</template>
+</odoo>
